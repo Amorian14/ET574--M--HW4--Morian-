@@ -32,3 +32,28 @@ class SlotMachine:
             "total": total,
             "result": result
         }
+def main():
+    machine = SlotMachine()
+
+    while True:
+        print("\n--- SLOT MACHINE ---")
+        print("1. Play a round")
+        print("2. Exit")
+
+        choice = input("Choose an option: ")
+
+        if choice == "1":
+            outcome = machine.play_round()
+            r1, r2, r3 = outcome["reels"]
+            print(f"\nReel values: {r1}, {r2}, {r3}")
+            print(f"Total: {outcome['total']}")
+            print(f"Result: {outcome['result']}")
+        elif choice == "2":
+            print("Goodbye!")
+            break
+        else:
+            print("Invalid choice. Try again.")
+
+
+if __name__ == "__main__":
+    main()
